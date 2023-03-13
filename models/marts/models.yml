@@ -1,8 +1,20 @@
 
 version: 2
 
+groups:
+  - name: ecommerce
+    owner:
+      # only 'name' or 'email' is required
+      name: Jane Smith
+      email: jane.smith@ecomm.com
+      # anything else is optional metadata
+      slack: janeiscool
+
+
 models:
   - name: customers
+    group: ecommerce
+    access: private
     description: Customer overview data mart, offering key details for each unique customer. One row per customer.
     columns:
       - name: customer_id
@@ -29,6 +41,8 @@ models:
               values: ['new', 'returning']
 
   - name: orders
+    group: ecommerce
+    access: public
     description: Order overview data mart, offering key details for each order inlcluding if it's a customer's first order and a food vs. drink item breakdown. One row per order.
     tests:
       - dbt_utils.expression_is_true:
