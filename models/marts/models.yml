@@ -58,9 +58,9 @@ models:
     columns:
       - name: order_id
         description: The unique key of the orders mart.
-        # constraints: # why doesn't this work?!
-        #   - not_null
-        #   - unique
+        constraints:
+          - type: not_null
+          - type: unique
         tests:
           - not_null
           - unique
