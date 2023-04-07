@@ -12,16 +12,13 @@ groups:
 models:
   - name: customers
     group: ecommerce
-    access: public
+    access: private
     config:
       contracted: true
     description: Public - Customer overview data mart, offering key details for each unique customer. One row per customer.
     columns:
       - name: customer_id
         description: The unique key of the orders mart.
-        # constraints: # why doesn't this work?!
-        #   - not_null
-        #   - unique
         tests:
           - not_null
           - unique
@@ -49,7 +46,9 @@ models:
 
   - name: orders
     group: ecommerce
-    access: private
+    access: public
+    config:
+      contracted: true
     description: Order overview data mart, offering key details for each order inlcluding if it's a customer's first order and a food vs. drink item breakdown. One row per order.
     tests:
       - dbt_utils.expression_is_true:
@@ -59,6 +58,9 @@ models:
     columns:
       - name: order_id
         description: The unique key of the orders mart.
+        # constraints: # why doesn't this work?!
+        #   - not_null
+        #   - unique
         tests:
           - not_null
           - unique
@@ -93,6 +95,7 @@ models:
         description: The count of how many times a customer as ordered, and where this order sits within that. The nth order as customer has placed. If a customer has placed two orders in the past before this one, this will be 3.
       - name: location_name
         description: The full location name of where this order was placed. Denormalized from `stg_locations`.
+        data_type: string
       - name: is_first_order
         description: A boolean indicating if this order is from a new customer placing their first order.
         data_type: boolean
