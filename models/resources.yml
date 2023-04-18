@@ -1,0 +1,12 @@
+groups:
+  - name: ecommerce
+    owner:
+      # only 'name' or 'email' is required
+      name: Cam Afzal
+      email: cameron.afzal@dbtlabs.com
+      # anything else is optional metadata
+      # slack: Cameron
+  - name: inventory
+    owner:
+      name: Jan Smith
+      email: janjan@dbtlabs.com

@@ -1,16 +1,6 @@
-
-groups:
-  - name: ecommerce
-    owner:
-      # only 'name' or 'email' is required
-      name: Cam Afzal
-      email: cameron.afzal@dbtlabs.com
-      # anything else is optional metadata
-      slack: Cameron
-
-
 models:
   - name: customers
+    latest_version: 2
     group: ecommerce
     access: private
     config:
@@ -43,6 +33,13 @@ models:
         tests:
           - accepted_values:
               values: ['new', 'returning']
+    versions:
+      - v: 2
+        columns:
+          - include: "*"
+            exclude:
+              - lifetime_spend_pretax
+      - v: 1
 
   - name: orders
     group: ecommerce
@@ -79,10 +76,16 @@ models:
         data_type: date
       - name: count_food_items
         description: The number of individual food items ordered.
+        data_type: integer
       - name: count_drink_items
         description: The number of individual drink items ordered.
+        data_type: integer
+        constraints:
+          - type: not_null
+          - type: unique
       - name: count_items
         description: The total number of both food and drink items ordered.
+        data_type: integer
       - name: subtotal_food_items
         description: The sum of all the food item prices without tax.
       - name: subtotal_drink_items
@@ -101,5 +104,7 @@ models:
         data_type: boolean
       - name: is_food_order
         description: A boolean indicating if this order included any food items.
+        data_type: boolean
       - name: is_drink_order
         description: A boolean indicating if this order included any drink items.
+        data_type: boolean
