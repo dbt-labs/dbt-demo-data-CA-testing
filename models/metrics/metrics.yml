@@ -45,17 +45,3 @@ metrics:
     dimensions:
       - location_name
       - is_first_order
-
-  - name: gross_profit
-    label: Gross Profit
-    description: "Revenue minus expenses"
-
-    calculation_method: expression
-    expression: "{{ metric('revenue') }} - {{ metric('expenses') }}"
-
-    timestamp: ordered_at
-    time_grains: [day, week, month, quarter, year]
-
-    dimensions:
-      - location_name
-      - is_first_order
