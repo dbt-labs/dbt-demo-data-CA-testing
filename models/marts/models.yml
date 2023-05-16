@@ -52,6 +52,12 @@ models:
           expression: "count_food_items + count_drink_items = count_items"
       - dbt_utils.expression_is_true:
           expression: "subtotal_food_items + subtotal_drink_items = subtotal"
+    # model-level constraints
+    constraints:
+      - type: check
+        columns: [count_items, count_food_items]
+        expression: "count_items >= count_food_items"
+        name: basic_item_check
     columns:
       - name: order_id
         description: The unique key of the orders mart.
