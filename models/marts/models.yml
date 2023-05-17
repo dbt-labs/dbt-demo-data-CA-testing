@@ -54,10 +54,9 @@ models:
           expression: "subtotal_food_items + subtotal_drink_items = subtotal"
     # model-level constraints
     constraints:
-      - type: check
-        columns: [count_items, count_food_items]
-        expression: "count_items >= count_food_items"
-        name: basic_item_check
+      - type: not_null
+        columns: [count_items, count_drink_items]
+        name: basic_constraint_test
     columns:
       - name: order_id
         description: The unique key of the orders mart.
