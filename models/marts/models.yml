@@ -1,6 +1,6 @@
 models:
   - name: customers
-    latest_version: 2
+    latest_version: 3
     group: ecommerce
     access: private
     config:
