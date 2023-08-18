@@ -1,5 +1,7 @@
-{# A basic example for a project-wide macro to cast a column uniformly #}
+{# A basic example for a project-wide macro to cast a column uniformly 
+CJM testing #}
 
 {% macro cents_to_dollars(column_name, precision=2) -%}
     ({{ column_name }} / 100)::numeric(16, {{ precision }})
 {%- endmacro %}
+
