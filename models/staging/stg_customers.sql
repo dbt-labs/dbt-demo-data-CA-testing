@@ -1,3 +1,6 @@
+{{ config(
+    tags=["finance", "accounting"]
+) }}
 
 with 
 
