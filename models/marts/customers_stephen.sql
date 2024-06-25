@@ -1,9 +1,9 @@
 with
 
-orders as (
+rrr as (
 
     select * from {{ ref('customers') }}
 
 )
 
-select * from orders
+select * from rrr
