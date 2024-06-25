@@ -55,4 +55,4 @@ joined as (
 
 )
 
-select customer_name, count_lifetime_orders, first_ordered_at, last_ordered_at, lifetime_spend, customer_type from joined
+select customer_id, customer_name, count_lifetime_orders, first_ordered_at, last_ordered_at, lifetime_spend, customer_type from joined
