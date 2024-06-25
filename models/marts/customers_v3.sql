@@ -14,8 +14,8 @@ orders as (
 ),
 
 stephen as (
-    select * from {{ref('stephen-fake-model-june2024')}}
-)
+    select * from {{ref('stephenfakemodeljune2024')}}
+),
 
 order_summary as (
 
