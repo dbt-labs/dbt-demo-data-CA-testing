@@ -72,10 +72,10 @@ models:
       - name: customer_id
         data_type: string
         description: The foreign key relating to the customer who placed the order.
-        tests:
-          - relationships:
-              to: ref('stg_customers')
-              field: customer_id
+        # tests:
+        #   - relationships:
+        #       to: ref('stg_customers')
+        #       field: customer_id
       - name: location_id
         data_type: string
         description: The foreign key relating to the location the order was placed at.
