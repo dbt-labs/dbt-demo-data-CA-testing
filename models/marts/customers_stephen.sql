@@ -12,7 +12,7 @@ first_names as (
 
 joined as (
     select * from customers_without_first_name
-    join first_names using (customer_id) 
+    join first_names using (customer_id)
 )
 
 select * from joined
