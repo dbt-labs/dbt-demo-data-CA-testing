@@ -1,4 +1,5 @@
 with source as (select * from {{ source("ecommerce", "customers") }})
 
-select *
+select
+    split_part(name, ' ', 1) as first_name
 from source
