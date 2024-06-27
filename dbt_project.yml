@@ -1,5 +1,5 @@
 
-name: 'demo_data'
+name: 'stehpen_demo_data'
 
 version: '1.5.0'
 config-version: 2
@@ -23,6 +23,6 @@ vars:
   truncate_timespan_to: "{{ current_timestamp() }}"
 
 models:
-  demo_data:
+  stephen_demo_data:
     marts:
       +materialized: table
