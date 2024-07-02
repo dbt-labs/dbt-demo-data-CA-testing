@@ -5,6 +5,9 @@ models:
       - name: customer_id
         tests:
         - unique
+        - accepted_values:
+            values:
+              - "15df7af1-ef13-473f-bbea-deedde94ac32"
   
   - name: customers
     latest_version: 3
