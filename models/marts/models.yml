@@ -1,4 +1,11 @@
 models:
+  - name: customers_stephen
+    description: Stephen's test model
+    columns:
+      - name: customer_id
+        tests:
+        - unique
+  
   - name: customers
     latest_version: 3
     group: ecommerce
@@ -9,9 +16,9 @@ models:
     columns:
       - name: customer_id
         description: The unique key of the orders mart.
-        # tests:
-        #   - not_null
-        #   - unique
+        tests:
+          - not_null
+          - unique
       - name: customer_name
         description: Customers' full name.
         data_type: string
