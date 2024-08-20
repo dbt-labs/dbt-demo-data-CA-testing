@@ -1,5 +1,5 @@
 {% docs stephen_docs_1 %}
 
-# Stephen is cool
+# GitHub updates 8/19 at 8.40pm.
 
 {% enddocs %}
