@@ -1,6 +1,6 @@
 models:
   - name: customers_stephen
-    description: Stephen's test model
+    description: '{{ doc("stephen_docs_1") }}'
     columns:
       - name: customer_id
         tests:
